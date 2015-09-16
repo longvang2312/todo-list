@@ -26,12 +26,12 @@
 				</div>
 		</form>
 				<div>
-					<span> Today I have <span class="emphasis">{{remaining()}}</span> of <span class="emphasis">{{todoTotal()}}</span> thing to do 
+					 Today I have <span class="emphasis">{{remaining()}}</span> of <span class="emphasis">{{todoTotal()}}</span> thing to do
 				</div>	
 				<section id="main" style="display: block;">
 				<div ng-show="todoTotal()!=0">
 					<input class="toggle-all" ng-click="todoCheckBoxAll()" type="checkbox" ng-model="CheckAll"/> 
-					<label for="toggle-all">Check All</label> 
+					<label >Check All</label>
 				</div>
 				
 				<ul id = "todo-list" class="unstyled"  >
@@ -40,7 +40,7 @@
 							<input type="checkbox" ng-model="todo.complete" ng-change="myData.$save(todo)"/>
 							<span  class="complete-{{todo.complete}}"> {{todo.text}}</span>
 						</div>
-						<input class="edit form-control" type="text" ng-model="todo.text" ng-keyup="todoOnEnter(todo)"/>
+						<input class="edit form-control" type="text" ng-model="todo.text" ng-keyup="todoOnEnter(todo)" ng-change="myData.$save(todo)"/>
 					</li>
 				</ul>
 				</section>
